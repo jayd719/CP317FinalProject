@@ -20,4 +20,6 @@ urlpatterns = [
     path('sign-in/',LoginView.as_view(template_name="Authentication/signIn.html",redirect_authenticated_user=True),name='signInP'),
     
     path('logout/',LogoutView.as_view(template_name="Authentication/logout.html"),name='logout'),
+    
+    path('search-for-a-doctor',searchForDoctor,name='search-doctor')
 ]
