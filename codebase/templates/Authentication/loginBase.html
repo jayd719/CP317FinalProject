@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block content%}
+
+
+{%include 'Homepage/components/header.html'%}
+<div class="h-24">
+
+</div>
+<div class="">
+    <div class="container  mx-auto flex-1 flex flex-col items-center justify-center px-2">
+        <div class="max-w-lg bg-white px-6 py-8 rounded shadow-xl text-black w-full rounded-3xl slide">
+            {% block auth %}
+  
+            {% endblock %}
+
+            <div class="text-center text-sm text-grey-dark mt-4">
+                By signing up, you agree to the 
+                <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                    Terms of Service
+                </a> and 
+                <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                    Privacy Policy
+                </a>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+<div class="h-24">
+
+</div>
+<script>
+    document.getElementById('menu1').style.visibility="hidden"
+</script>
+
+<style>
+    .slide{
+        opacity: 0;
+        scale: .5;
+        animation: slidein2 1s forwards;
+    }
+    @keyframes slidein2 {
+        form{
+            opacity: 0;
+            scale: .5;
+        }to{
+            opacity: 100;
+            scale: 1;
+        }
+    }
+</style>
+{% endblock %}

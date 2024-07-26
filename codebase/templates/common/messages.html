@@ -1,0 +1,47 @@
+{% if messages %} 
+{% for message in messages%}
+    <div class="fixed bottom-0 right-0 p-6 slideFromRight">
+        <div class="border border-blue-500 p-2 bg-base-100 rounded-lg shadow-xl" id="toast">
+            <div class="flex justify-between align-center">
+                <strong class="font-title text-lg text-blue-700">Health-Sync Alerts</strong>
+                <p
+                type="button"
+                class="btn btn-sm border-blue-500 hover:bg-blue-500 hover:text-white" 
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                onclick="mclose();"
+                >
+                X
+                </p>
+            </div>
+            <div class="pt-4">
+                <p class="text-sm">{{message}}</p>
+            </div>
+            </div>
+    </div>
+    {% endfor%} 
+{% endif%}
+
+<script>
+    function mclose(){
+        document.getElementById("toast").remove()
+    }
+</script>
+
+<style>
+    .slideFromRight{
+        opacity: 0;
+        animation: slideFromRight_animation 1s forwards;
+    }
+
+    @keyframes slideFromRight_animation {
+        from{
+            opacity: 0;
+            transform: translateX(300px);
+        }to{
+            opacity: 100;
+            transform: translateX(0px);
+        }
+    }
+
+</style>

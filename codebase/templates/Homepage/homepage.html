@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {%include 'Homepage/components/header.html'%}
+    {%include 'Homepage/components/overviewSection.html'%}
+    {%include 'common/cookieMessage.html'%}
+
+    <div class="h-24">
+
+    </div>
+
+    {%include 'Homepage/components/searchSection.html'%}
+    <div class="h-48">
+
+    </div>
+    {%include 'Homepage/components/resisterToday.html'%}
+
+    {%include 'Homepage/components/customerReviews.html'%}
+    {%include 'Homepage/components/footer.html'%}
+{% endblock%}
+    

@@ -1,0 +1,19 @@
+{% extends "Authentication/loginBase.html" %}
+
+{% load tailwind_filters %} 
+{% block auth %}
+
+<div class="">
+  <img class="w-24 mx-auto group-hover:scale-[1.75] group-hover:rotate-[25deg] transition duration-400" src="https://www.svgrepo.com/show/384579/doctor-health-healthcare-hospital-medical-stethoscope.svg" alt="">
+  <h2 class="font-title font-black text-3xl text-center my-5 text-blue-900">Register as a Doctor</h2>
+    <form method="POST" class="w-full">
+      {% csrf_token %}
+      <fieldset class="form-group">{{form|crispy}}</fieldset>
+      <button type="submit" class="btn btn-outline">
+        <span class="btn-txt">Sign up</span>
+      </button>
+    </form>
+</div>
+  
+{% endblock %}
+

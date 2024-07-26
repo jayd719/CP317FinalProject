@@ -7,8 +7,8 @@
             </div>
 
             <div class="flex gap-2 mt-2" id="buttons">
-                <button class="" onclick="acceptCookies()">Accept Cookies</button>
-                <button class="" onclick="removeCookieMessageBox()">Reject Cookies</button>
+                <button class="btn btn-sm bg-blue-500 rounded-full text-white px-5" onclick="acceptCookies()">Accept Cookies</button>
+                <button class="btn btn-sm bg-blue-500 rounded-full text-white px-5" onclick="removeCookieMessageBox()">Reject Cookies</button>
             </div>
 
         </div>
@@ -46,7 +46,7 @@
     }
 
 
-    updateSiblings("buttons","btn btn-sm bg-blue-500 rounded-full text-white px-5")
+    
     if (getCookie("userConsent")!=""){
         removeCookieMessageBox()
     }
