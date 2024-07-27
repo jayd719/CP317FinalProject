@@ -21,5 +21,5 @@ urlpatterns = [
     
     path('logout/',LogoutView.as_view(template_name="Authentication/logout.html"),name='logout'),
     
-    path('search-for-a-doctor',searchForDoctor,name='search-doctor')
+    path('search-for-a-doctor/<str:poll>',searchForDoctor,name='search-doctor')
 ]
