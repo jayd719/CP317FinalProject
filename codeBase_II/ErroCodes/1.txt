@@ -1,0 +1,51 @@
+Environment:
+
+
+Request Method: GET
+Request URL: http://127.0.0.1:8000/contactForm/
+
+Django Version: 5.0.7
+Python Version: 3.10.7
+Installed Applications:
+['django.contrib.admin',
+ 'django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'AUTHENTICATIONS.apps.AuthenticationsConfig',
+ 'HOMEPAGE.apps.HomepageConfig']
+Installed Middleware:
+['django.middleware.security.SecurityMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.middleware.common.CommonMiddleware',
+ 'django.middleware.csrf.CsrfViewMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware',
+ 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+
+Template loader postmortem
+Django tried loading these templates, in this order:
+
+Using engine django:
+    This engine did not provide a list of tried templates.
+
+
+
+Traceback (most recent call last):
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/jashan/projects/CP317FinalProject/codeBase_II/env/lib/python3.10/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+
+Exception Type: TemplateDoesNotExist at /contactForm/
+Exception Value: /contact.html
+

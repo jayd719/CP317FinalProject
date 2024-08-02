@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+{%block login%}
+<form method="POST" class="grid">{% csrf_token %}
+        {% csrf_token %}
+        <div class="form-group">
+                {{ form.name.label_tag }} {{ form.name }}
+        </div>
+
+            <div class="form-group">
+                {{ form.email.label_tag }} {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                {{ form.message.label_tag }} {{ form.message }}
+            </div>
+        <button type="submit">SUMBIT</button>
+</form>
+{%endblock%}
+
+
