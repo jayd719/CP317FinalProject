@@ -1,0 +1,70 @@
+@startuml AUTHENICATION
+
+'Participants
+component [AUTHENICATOIN\ncomponent] as auth
+left to right direction
+
+
+
+package "management/command/" as commands{
+    interface "createNewTask.py"
+    interface "managementTaskOne.py"
+}
+
+
+
+package "templates/AUTHENTICATION/" as templates{
+    'html pages
+    entity loginPage.html
+    entity signUpPage.html
+    entity homepage.html
+
+}
+package "static/AUTHENTICATION/" as staticFiles{
+    component "themeChanger(theme1,theme2)" as themeChanger
+    component "cookieConsent" as cookieConsent
+}
+package "views.py\n<<interface>>" as views {
+    entity "HomePage:TemplateView" as hmp
+    entity "LoginView:LoginView" as loginView
+    entity "RegisterVeiw:RegisterView" as rv
+    hmp -u->homepage.html
+    loginView-->loginPage.html
+    rv-->signUpPage.html
+
+}
+
+package "models\n<<interface>>" as models{
+    json "UserTypes\n<<enum>>" as types{
+        "DOCTOR":"Doctor,doctor",
+        "USER":"User,user"
+    }
+
+    json "User:AbstractUser" as user{
+        "email":"varChar(125)",
+        "first_name":"varChar(60)",
+        "last_name":"varChar(50)",
+        "type":"UserTypes"
+    }
+
+    json "Doctor:User" as doctor{
+        "speacilties":"[*]"
+    }
+
+    json "Patient:User" as patient{
+        "patienId":"int"
+    }
+
+    user-u-types:type of user
+    user<-l-doctor
+    user<-d-patient
+}
+
+
+auth-u->commands
+auth-l-> staticFiles
+auth-d-> templates
+auth-> views
+auth--> models
+
+@enduml
